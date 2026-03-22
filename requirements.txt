@@ -1,0 +1,22 @@
+# Cirrus Exposé Automation — Dependencies
+# All free / open-source
+
+# PDF parsing + image extraction
+PyMuPDF
+
+# LLM API — structured data extraction (Groq/Llama)
+groq
+
+# Excel read/write
+openpyxl
+
+# Headless browser for Check24 scraping
+playwright
+
+# Google Drive upload
+google-api-python-client
+google-auth
+google-auth-oauthlib
+
+# Utility
+python-dotenv
