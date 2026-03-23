@@ -58,6 +58,10 @@ GROQ_API_KEY=your-groq-api-key
 GOOGLE_SERVICE_ACCOUNT_JSON=service_account.json
 GOOGLE_DRIVE_FOLDER_ID=your-drive-folder-id
 ```
+## Note on Wohnfläche
+Check24 accepts maximum 500m². Since the total area (594m²) exceeds this,
+the script automatically uses average per unit (594 / 11 = 54m²) which is
+the correct approach as Check24 valuates individual apartments not whole buildings.
 
 **5. Add Google credentials:**
 - `service_account.json` — Google service account key
@@ -107,3 +111,12 @@ All thresholds and configuration values are in `populate_excel.py` at the top. N
 ## Note on Google Photos
 
 The case study requested Google Photos integration. The Google Photos API requires a paid Google One plan. As a free alternative, property images are uploaded to a `/images` subfolder inside the Google Drive folder — achieving the same result at zero cost.
+
+## Links
+- Google Drive: https://drive.google.com/drive/folders/YOUR_FOLDER_ID
+- GitHub: https://github.com/SahilDangat7/cirrus-expose-automation
+
+## Sample Output
+- Extracted 11 units from PDF
+- Check24 market price: 1,956 €/m² 
+- Uploaded to Google Drive: Excel + 19 property images
