@@ -11,7 +11,8 @@ PLZ         = str(extracted_data["plz"])
 BAUJAHR     = str(extracted_data["baujahr"])
 STRASSE     = extracted_data["strasse"]
 NR          = str(extracted_data["hausnummer"])
-WOHNFLAECHE = str(int(extracted_data["wohnflaeche_gesamt_qm"]))
+avg_flaeche = int(extracted_data["wohnflaeche_gesamt_qm"] / extracted_data["anzahl_wohneinheiten"])
+WOHNFLAECHE = str(avg_flaeche) 
 ZIMMER      = "2"
 BADEZIMMER  = "1"
 ZUSTAND     = "gut erhalten"    
@@ -133,7 +134,7 @@ def scrape():
 
        
         # ── Extract price
-        page.wait_for_timeout(10000)
+        page.wait_for_timeout(15000)  # increase wait to 15 seconds
         page.screenshot(path="output/check24_result.png")
         try:
     # Check if result is inside an iframe
